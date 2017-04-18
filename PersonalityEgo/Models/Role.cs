@@ -11,7 +11,7 @@ namespace PersonalityEgo.Models
         public int SkillID { get; set; }
         public int PersonalityID { get; set; }
 
-        public virtual Personality Personality { get; set;}
-        public virtual Skill Skill { get; set; }
+        public virtual ICollection<Skill> Personality { get; set;}
+        public virtual ICollection<Skill> Skills { get; set; }
     }
 }

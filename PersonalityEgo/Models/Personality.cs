@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace PersonalityEgo.Models
 {
@@ -32,6 +30,7 @@ namespace PersonalityEgo.Models
         }
 
         public virtual ICollection<Skill> Skills {get; set;}
+        public virtual ICollection<Role> Role { get; set; }
 
     }
 }
