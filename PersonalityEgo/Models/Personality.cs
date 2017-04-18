@@ -4,6 +4,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PersonalityEgo.Models
 {
+
+    public enum Gender
+    {
+        Male, Female, Undefined
+    }
+
     public class Personality
     {
         public int ID { get; set; }
@@ -11,15 +17,24 @@ namespace PersonalityEgo.Models
         [StringLength(15)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
+
         [Required]
         [StringLength(20)]
         [Display(Name = "First Name")]
         public string LastName { get; set; }
+
+        [Required]
+        public Gender Gender { get; set; }
+
         [Display(Name = "Mental Age")]
-        public int MentalAge { get; set; }
+        [DisplayFormat(NullDisplayText = "Unknown Mental Age")]
+        public int? MentalAge { get; set; }
+
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime Birthday { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM-dd}", ApplyFormatInEditMode = true, NullDisplayText = "Unknown Birthday")]
+        public DateTime? Birthday { get; set; }
+
+       
 
         public string FullName
         {
@@ -30,7 +45,7 @@ namespace PersonalityEgo.Models
         }
 
         public virtual ICollection<Skill> Skills {get; set;}
-        public virtual ICollection<Role> Role { get; set; }
+        public virtual ICollection<Role> Roles { get; set; }
 
     }
 }

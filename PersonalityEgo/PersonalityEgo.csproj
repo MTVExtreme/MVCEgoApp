@@ -148,9 +148,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\EgoConfiguration.cs" />
+    <Compile Include="DAL\EgoContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Charge.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Personality.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RoleAssignment.cs" />
