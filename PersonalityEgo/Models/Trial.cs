@@ -6,6 +6,7 @@ namespace PersonalityEgo.Models
     {
         [Key]
         public int TrialID { get; set; }
+       
         public int ProscuterID { get; set; }
         public int PlaintiffID { get; set; }
 
