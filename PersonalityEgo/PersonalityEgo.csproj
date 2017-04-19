@@ -55,6 +55,12 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -148,6 +154,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonalityController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="DAL\EgoConfiguration.cs" />
     <Compile Include="DAL\EgoContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -156,6 +164,14 @@
     <Compile Include="Migrations\201704191320106_InitalCreate.cs" />
     <Compile Include="Migrations\201704191320106_InitalCreate.Designer.cs">
       <DependentUpon>201704191320106_InitalCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704191726146_DateFormat.cs" />
+    <Compile Include="Migrations\201704191726146_DateFormat.Designer.cs">
+      <DependentUpon>201704191726146_DateFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704191746126_DateFormat2.cs" />
+    <Compile Include="Migrations\201704191746126_DateFormat2.Designer.cs">
+      <DependentUpon>201704191746126_DateFormat2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Charge.cs" />
@@ -170,6 +186,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -190,7 +207,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -204,6 +223,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Personality\Create.cshtml" />
+    <Content Include="Views\Personality\Delete.cshtml" />
+    <Content Include="Views\Personality\Details.cshtml" />
+    <Content Include="Views\Personality\Edit.cshtml" />
+    <Content Include="Views\Personality\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -226,6 +255,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704191320106_InitalCreate.resx">
       <DependentUpon>201704191320106_InitalCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704191726146_DateFormat.resx">
+      <DependentUpon>201704191726146_DateFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704191746126_DateFormat2.resx">
+      <DependentUpon>201704191746126_DateFormat2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
