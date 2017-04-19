@@ -32,7 +32,7 @@ namespace PersonalityEgo.Migrations
                 new Personality { FirstName = "Daisy", LastName = "Phillips", Gender = Gender.Female}
             };
 
-            personalities.ForEach(s => context.Personality.AddOrUpdate(p => p.LastName, s));
+            personalities.ForEach(s => context.Personality.AddOrUpdate(p => p.ID, s));
             context.SaveChanges();
 
             var departments = new List<Department>

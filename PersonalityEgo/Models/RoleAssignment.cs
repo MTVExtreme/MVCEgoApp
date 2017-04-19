@@ -8,9 +8,9 @@ namespace PersonalityEgo.Models
         [Key]
         [ForeignKey("Personality")]
         public int PersonalityID { get; set; }
-        [ForeignKey("Role")]
+        [ForeignKey("Roles")]
         public int RoleID { get; set; }
-        [ForeignKey("Skill")]
+        [ForeignKey("Skills")]
         public int SkillID { get; set; }
        
 

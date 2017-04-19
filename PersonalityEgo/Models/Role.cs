@@ -13,7 +13,7 @@ namespace PersonalityEgo.Models
         public string RoleName { get; set; }
 
         public virtual ICollection<Skill> Skills { get; set; }
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
 
     }
 }
