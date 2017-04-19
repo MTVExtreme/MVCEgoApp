@@ -53,7 +53,7 @@ namespace PersonalityEgo.Migrations
             {
                 new Role { RoleName = "Guard", DepartmentID = departments.Single( i => i.Name == "Military").DepartmentID},
                 new Role { RoleName = "Researcher", DepartmentID = departments.Single( i => i.Name == "Engineering").DepartmentID },
-                new Role { RoleName = "Searcher", DepartmentID = departments.Single( i => i.Name == "Searcher").DepartmentID },
+                new Role { RoleName = "Searcher", DepartmentID = departments.Single( i => i.Name == "Military").DepartmentID },
                 new Role { RoleName = "Tech Designer", DepartmentID = departments.Single( i => i.Name == "Engineering").DepartmentID },
                 new Role { RoleName = "Queen", DepartmentID = departments.Single( i => i.Name == "Governament").DepartmentID },
 

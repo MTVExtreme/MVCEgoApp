@@ -8,12 +8,12 @@ namespace PersonalityEgo.Models
         public int RoleID { get; set; }
         [ForeignKey("Department")]
         public int DepartmentID { get; set; }
-        [ForeignKey("Personality")]
-        public int PersonalityID { get; set; }
+
 
         public string RoleName { get; set; }
 
-        public virtual ICollection<Skill> Personality { get; set;}
         public virtual ICollection<Skill> Skills { get; set; }
+        public Department Department { get; set; }
+
     }
 }
