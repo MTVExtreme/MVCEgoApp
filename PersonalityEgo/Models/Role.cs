@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersonalityEgo.Models
 {
     public class Role
     {
         public int RoleID { get; set; }
-        public int SkillID { get; set; }
-        public int PersonalityID { get; set; }
+        [ForeignKey("Department")]
+        public int DepartmentID { get; set; }
 
-        public virtual Personality Personality { get; set;}
-        public virtual Skill Skill { get; set; }
+
+        public string RoleName { get; set; }
+
+        public virtual ICollection<Skill> Skills { get; set; }
+        public virtual Department Department { get; set; }
+
     }
 }
