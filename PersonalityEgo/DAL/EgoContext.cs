@@ -6,7 +6,7 @@ namespace PersonalityEgo.DAL
 {
     public class EgoContext : DbContext
     {
-        public DbSet<Personality> Personalities { get; set; }
+        public DbSet<Personality> Personality { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<RoleAssignment> RoleAssignment { get; set; }
         public DbSet<Skill> Skill { get; set; }

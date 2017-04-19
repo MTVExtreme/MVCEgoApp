@@ -6,8 +6,6 @@ namespace PersonalityEgo.Models
     public class Role
     {
         public int RoleID { get; set; }
-        [ForeignKey("Skill")]
-        public int SkillID { get; set; }
         [ForeignKey("Department")]
         public int DepartmentID { get; set; }
         [ForeignKey("Personality")]
