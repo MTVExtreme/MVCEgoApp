@@ -17,22 +17,22 @@ namespace PersonalityEgo.Migrations
         {
             var personalities = new List<Personality>
             {
-                new Personality { FirstName = "Mea", LastName = "Soroni", Birthday = DateTime.Parse("07-06"), Gender = Gender.Female},
-                new Personality { FirstName = "Eve", LastName = "Villiar", Birthday = DateTime.Parse("01-06"), Gender = Gender.Female},
-                new Personality { FirstName = "Calvin", LastName = "Mavine", Birthday = DateTime.Parse("05-03"), Gender = Gender.Male},
+                new Personality { FirstName = "Mea", LastName = "Soroni", Birthday = DateTime.Parse("07/06"), Gender = Gender.Female},
+                new Personality { FirstName = "Eve", LastName = "Villiar", Birthday = DateTime.Parse("01/06"), Gender = Gender.Female},
+                new Personality { FirstName = "Calvin", LastName = "Mavine", Birthday = DateTime.Parse("05/03"), Gender = Gender.Male},
                 new Personality { FirstName = "Hunter ", LastName = "Blake", Gender = Gender.Male},
-                new Personality { FirstName = "Jane", LastName = "Raizoni", Birthday = DateTime.Parse("10-04"), Gender = Gender.Female},
-                new Personality { FirstName = "Kalie", LastName = "Tazen", Birthday = DateTime.Parse("10-23"), Gender = Gender.Female},
-                new Personality { FirstName = "Halie", LastName = "Tazen", Birthday = DateTime.Parse("10-23"), Gender = Gender.Female},
-                new Personality { FirstName = "Xavier", LastName = "Rosemary", Birthday = DateTime.Parse("01-06"), Gender = Gender.Male},
-                new Personality { FirstName = "Rachiel", LastName = "Vessalius", Birthday = DateTime.Parse("02-26"), Gender = Gender.Female},
+                new Personality { FirstName = "Jane", LastName = "Raizoni", Birthday = DateTime.Parse("10/04"), Gender = Gender.Female},
+                new Personality { FirstName = "Kalie", LastName = "Tazen", Birthday = DateTime.Parse("10/23"), Gender = Gender.Female},
+                new Personality { FirstName = "Halie", LastName = "Tazen", Birthday = DateTime.Parse("10/23"), Gender = Gender.Female},
+                new Personality { FirstName = "Xavier", LastName = "Rosemary", Birthday = DateTime.Parse("01/06"), Gender = Gender.Male},
+                new Personality { FirstName = "Rachiel", LastName = "Vessalius", Birthday = DateTime.Parse("02/26"), Gender = Gender.Female},
                 new Personality { FirstName = "Laynce", LastName = "Caster", Gender = Gender.Undefined},
-                new Personality { FirstName = "Gwen", LastName = "Gardez", Birthday = DateTime.Parse("03-16"), Gender = Gender.Female},
-                new Personality { FirstName = "Tyler", LastName = "Vermillion", Birthday = DateTime.Parse("01-06"), MentalAge = 19 , Gender = Gender.Male},
+                new Personality { FirstName = "Gwen", LastName = "Gardez", Birthday = DateTime.Parse("03/16"), Gender = Gender.Female},
+                new Personality { FirstName = "Tyler", LastName = "Vermillion", Birthday = DateTime.Parse("01/06"), MentalAge = 19 , Gender = Gender.Male},
                 new Personality { FirstName = "Daisy", LastName = "Phillips", Gender = Gender.Female}
             };
 
-            personalities.ForEach(s => context.Personality.AddOrUpdate(p => p.ID, s));
+            personalities.ForEach(s => context.Personality.AddOrUpdate(p => p.FirstName, s));
             context.SaveChanges();
 
             var departments = new List<Department>

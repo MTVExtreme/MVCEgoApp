@@ -20,21 +20,38 @@ namespace PersonalityEgo.Models
 
         [Required]
         [StringLength(20)]
-        [Display(Name = "First Name")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Required]
         public Gender Gender { get; set; }
 
-        [Display(Name = "Mental Age")]
-        [DisplayFormat(NullDisplayText = "Unknown Mental Age")]
-        public int? MentalAge { get; set; }
-
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM-dd}", ApplyFormatInEditMode = true, NullDisplayText = "Unknown Birthday")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true, NullDisplayText = "Unknown Birthday")]
         public DateTime? Birthday { get; set; }
 
-       
+        private int? _mentalAge;
+
+        [Display(Name = "Mental Age")]
+        [DisplayFormat(NullDisplayText="Unknown Age", ApplyFormatInEditMode=true)]
+        public int? MentalAge
+        {
+            get
+            {
+                if (Birthday != null)
+                {
+                    _mentalAge = DateTime.Now.Year - Birthday.Value.Year;
+                    return _mentalAge;
+                }
+                else return _mentalAge;
+            }
+
+            set
+            {
+                _mentalAge = value;
+            }
+
+        }
 
         public string FullName
         {
