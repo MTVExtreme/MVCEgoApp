@@ -1,49 +1,59 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+	@*<link rel="stylesheet" href="~/Content/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="~/Content/style.css"> <!-- Resource style -->
+	<script src="~/Scripts/modernizr.js"></script> <!-- Modernizr -->*@
+	
+	<title>@ViewBag.Title - My ASP.NET Application</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>
-                    <li>@Html.ActionLink("Roles", "Index", "Role")</li>
-                    <li>@Html.ActionLink("Skills", "Index", "Skill")</li>
-                    <li>@Html.ActionLink("Departments", "Index", "Department")</li>
-                    <li>@Html.ActionLink("Charges", "Index", "Charge")</li>
-                    <li>@Html.ActionLink("Assignments", "Index", "Assignment")</li>
-                    <li>@Html.ActionLink("Trials", "Index", "Trial")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+	<header class="cd-header">
+		<a href="#0" class="cd-logo"><img src="~/img/cd-logo.svg" alt="Logo"></a>
+		<a href="#0" class="cd-3d-nav-trigger">
+			Menu
+			<span></span>
+		</a>
+	</header> <!-- .cd-header -->
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+	<nav class="cd-3d-nav-container">
+		<ul class="cd-3d-nav">
+			<li  class="cd-selected">@Html.ActionLink("Home", "Index", "Home")</li>
+			<li>@Html.ActionLink("About", "About", "Home")</li>
+			<li>@Html.ActionLink("Personalities", "Index", "Personality")</li>
+			<li>@Html.ActionLink("Roles", "Index", "Role")</li>
+			<li>@Html.ActionLink("Skills", "Index", "Skill")</li>
+			<li>@Html.ActionLink("Departments", "Index", "Department")</li>
+			<li>@Html.ActionLink("Charges", "Index", "Charge")</li>
+			<li>@Html.ActionLink("Assignments", "Index", "Assignment")</li>
+			<li>@Html.ActionLink("Trials", "Index", "Trial")</li>
+		</ul> <!-- .cd-3d-nav -->
+
+		<span class="cd-marker color-1"></span>	
+	</nav> <!-- .cd-3d-nav-container -->
+
+	<main class="container body-content">
+   
+		@RenderBody()
+		<hr />
+		<footer>
+			<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+		</footer>
+
+	</main>
+
+		@*<script src="~/Scripts/jquery-2.1.1.js"></script>
+		<script src="~/Scripts/main.js"></script>*@ <!-- Resource jQuery -->
+		@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/main")
+		@Scripts.Render("~/bundles/bootstrap")
+		@RenderSection("scripts", required: false)
 </body>
 </html>
