@@ -64,6 +64,7 @@ namespace PersonalityEgo.Controllers
                     break;
             }
 
+            // var personality = db.Personality.Include(r => r.Role);
 
             int pageSize = 6;
             int pageNumber = (page ?? 1);

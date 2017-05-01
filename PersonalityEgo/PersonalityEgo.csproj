@@ -161,25 +161,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704191320106_InitalCreate.cs" />
-    <Compile Include="Migrations\201704191320106_InitalCreate.Designer.cs">
-      <DependentUpon>201704191320106_InitalCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704191726146_DateFormat.cs" />
-    <Compile Include="Migrations\201704191726146_DateFormat.Designer.cs">
-      <DependentUpon>201704191726146_DateFormat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704191746126_DateFormat2.cs" />
-    <Compile Include="Migrations\201704191746126_DateFormat2.Designer.cs">
-      <DependentUpon>201704191746126_DateFormat2.cs</DependentUpon>
+    <Compile Include="Migrations\201704211846484_FirstMigration.cs" />
+    <Compile Include="Migrations\201704211846484_FirstMigration.Designer.cs">
+      <DependentUpon>201704211846484_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Personality.cs" />
     <Compile Include="Models\Role.cs" />
-    <Compile Include="Models\RoleAssignment.cs" />
-    <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Trial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -264,14 +254,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704191320106_InitalCreate.resx">
-      <DependentUpon>201704191320106_InitalCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704191726146_DateFormat.resx">
-      <DependentUpon>201704191726146_DateFormat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704191746126_DateFormat2.resx">
-      <DependentUpon>201704191746126_DateFormat2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704211846484_FirstMigration.resx">
+      <DependentUpon>201704211846484_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

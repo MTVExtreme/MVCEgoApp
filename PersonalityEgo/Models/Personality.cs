@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersonalityEgo.Models
 {
 
     public enum Gender
     {
-        Male, Female, Undefined
+        Undefined, Male, Female, 
     }
 
     public class Personality
     {
+        [Key]
         public int ID { get; set; }
         [Required]
         [StringLength(15)]
@@ -25,6 +27,10 @@ namespace PersonalityEgo.Models
 
         [Required]
         public Gender Gender { get; set; }
+
+        [ForeignKey("Role")]
+        public int RoleID { get; set; }
+
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true, NullDisplayText = "Unknown Birthday")]
@@ -61,8 +67,9 @@ namespace PersonalityEgo.Models
             }
         }
 
-        public virtual ICollection<Skill> Skills {get; set;}
-        public virtual ICollection<Role> Roles { get; set; }
+
+        public virtual Role Role { get; set; }
+
 
     }
 }
