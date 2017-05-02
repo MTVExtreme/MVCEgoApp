@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PagedList;
+using PersonalityEgo.DAL;
+using PersonalityEgo.Models;
+using System;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using PagedList;
-using System.Web;
 using System.Web.Mvc;
-using PersonalityEgo.DAL;
-using PersonalityEgo.Models;
 
 namespace PersonalityEgo.Controllers
 {
@@ -89,7 +87,17 @@ namespace PersonalityEgo.Controllers
         // GET: Personality/Create
         public ActionResult Create()
         {
+            PopulateRolesDropDownList();
             return View();
+        }
+
+
+        private void PopulateRolesDropDownList(object selectedRole = null)
+        {
+            var rolesQuery = from d in db.Role
+                             orderby d.RoleName
+                             select d;
+            ViewBag.RoleID = new SelectList(rolesQuery, "RoleID", "RoleName", selectedRole);
         }
 
         // POST: Personality/Create
@@ -97,7 +105,7 @@ namespace PersonalityEgo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FirstName,LastName,Gender,MentalAge,Birthday")] Personality personality)
+        public ActionResult Create([Bind(Include = "ID,FirstName,LastName,Gender,MentalAge,Birthday,RoleID")] Personality personality)
         {
             if (ModelState.IsValid)
             {
@@ -108,6 +116,8 @@ namespace PersonalityEgo.Controllers
 
             return View(personality);
         }
+
+
 
         // GET: Personality/Edit/5
         public ActionResult Edit(int? id)
@@ -121,6 +131,7 @@ namespace PersonalityEgo.Controllers
             {
                 return HttpNotFound();
             }
+            PopulateRolesDropDownList(personality.RoleID);
             return View(personality);
         }
 
@@ -129,7 +140,7 @@ namespace PersonalityEgo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,FirstName,LastName,Gender,MentalAge,Birthday")] Personality personality)
+        public ActionResult Edit([Bind(Include = "ID,FirstName,LastName,Gender,MentalAge,Birthday,RoleID")] Personality personality)
         {
             if (ModelState.IsValid)
             {
@@ -137,6 +148,7 @@ namespace PersonalityEgo.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            PopulateRolesDropDownList(personality.RoleID);
             return View(personality);
         }
 

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using PersonalityEgo.DAL;
+using PersonalityEgo.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using PersonalityEgo.DAL;
-using PersonalityEgo.Models;
 
 namespace PersonalityEgo.Controllers
 {
@@ -16,9 +12,21 @@ namespace PersonalityEgo.Controllers
         private EgoContext db = new EgoContext();
 
         // GET: Role
-        public ActionResult Index()
+        public ActionResult Index(int? SelectedRole)
         {
             var role = db.Role.Include(r => r.Department);
+
+            //var roles = db.Role.OrderBy(q => q.RoleName).ToList();
+            //ViewBag.SelectedRole = new SelectList(roles, "RoleID", "RoleName", SelectedRole);
+            //int roleID = SelectedRole.GetValueOrDefault();
+
+            //IQueryable<Role> courses = db.Role
+            //    .Where(c => !SelectedRole.HasValue || c.RoleID == roleID)
+            //    .OrderBy(d => d.RoleID)
+            //    .Include(d => d.Department);
+            //var sql = courses.ToString();
+
+
             return View(role.ToList());
         }
 
@@ -40,9 +48,9 @@ namespace PersonalityEgo.Controllers
         // GET: Role/Create
         public ActionResult Create()
         {
-            ViewBag.DepartmentID = new SelectList(db.Department, "DepartmentID", "Name");
             return View();
         }
+
 
         // POST: Role/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
